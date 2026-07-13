@@ -1,4 +1,17 @@
-# BClaw
+# Agent-Skill
+
+适合各Agent的各类Skills，集中管理。
+
+## Skills 目录
+
+| Skill | 说明 |
+|-------|------|
+| [crbe-doc-review](./crbe-doc-review/) | 华润饮料公文90分自检助手 — 通知/请示/总结/讲话稿/会议纪要等内部正式材料审稿评分、诊断和优化改写 |
+| [BClaw](./.trae/skills/bclaw/) | OpenClaw/Trae Agent 员工化技能 — 把新Agent培养成数字员工 |
+
+---
+
+# BClaw (历史)
 
 BClaw is a publish-ready custom skill for OpenClaw / Trae style agents.
 

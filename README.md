@@ -11,15 +11,24 @@
 
 ## 安装方式（WorkBuddy 用户）
 
+### 方式一：一键安装（推荐）
+
+**macOS / Linux：**
+```bash
+curl -sL https://raw.githubusercontent.com/Captainf5/Agent-Skill/main/crb-doc-review/install.sh | bash
+```
+
+**Windows（CMD / PowerShell）：**
+```cmd
+powershell -Command "Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/Captainf5/Agent-Skill/main/crb-doc-review/install.bat' -OutFile 'install.bat'; cmd /c install.bat"
+```
+或直接下载 `install.bat` 到本地运行。
+
+### 方式二：手动安装
+
 1. 下载对应 Skill 目录下的 `SKILL.md`
 2. 放到自己机器的 `~/.workbuddy/skills/<skill-name>/SKILL.md`
 3. 重启 WorkBuddy 即可生效
-
-例如安装公文自检助手：
-```bash
-mkdir -p ~/.workbuddy/skills/crb-doc-review
-# 将 SKILL.md 下载后放入该目录
-```
 
 ---
 

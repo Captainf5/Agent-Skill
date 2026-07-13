@@ -1,5 +1,5 @@
 ---
-name: crbe-doc-review
+name: crb-doc-review
 version: 1.1.0
 description: 华润饮料公文90分自检助手——对通知、请示、总结、讲话稿、会议纪要等内部正式材料进行审稿评分、诊断和优化改写
 author: Buddy

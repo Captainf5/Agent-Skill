@@ -1,147 +1,53 @@
 # Agent-Skill
 
-适合各Agent的各类Skills，集中管理。
+适合各 Agent 的各类 Skills，集中管理。
 
 ## Skills 目录
 
-| Skill | 说明 |
-|-------|------|
-| [crbe-doc-review](./crbe-doc-review/) | 华润饮料公文90分自检助手 — 通知/请示/总结/讲话稿/会议纪要等内部正式材料审稿评分、诊断和优化改写 |
-| [BClaw](./.trae/skills/bclaw/) | OpenClaw/Trae Agent 员工化技能 — 把新Agent培养成数字员工 |
+| Skill | 说明 | 安装路径 |
+|-------|------|----------|
+| [crb-doc-review](./crb-doc-review/) | 华润饮料公文90分自检助手 — 通知/请示/总结/讲话稿/会议纪要等内部正式材料审稿评分、诊断和优化改写 | `~/.workbuddy/skills/crb-doc-review/` |
+| [bclaw](./bclaw/) | Agent 员工化技能 — 把新 Agent 培养成数字员工 | `~/.workbuddy/skills/bclaw/` |
+
+## 安装方式（WorkBuddy 用户）
+
+1. 下载对应 Skill 目录下的 `SKILL.md`
+2. 放到自己机器的 `~/.workbuddy/skills/<skill-name>/SKILL.md`
+3. 重启 WorkBuddy 即可生效
+
+例如安装公文自检助手：
+```bash
+mkdir -p ~/.workbuddy/skills/crb-doc-review
+# 将 SKILL.md 下载后放入该目录
+```
 
 ---
 
-# BClaw (历史)
+## Skill 详情
 
-BClaw is a publish-ready custom skill for OpenClaw / Trae style agents.
+### crb-doc-review — 华润饮料公文90分自检助手
 
-Its job is simple:
+粘贴一篇初稿，自动触发6步审稿流程：
+1. 文种与场景判断
+2. 5维度评分（总分100）
+3. 主要问题诊断表
+4. 90分优化稿
+5. 人工复核清单
+6. 提交达标判断
 
-- Turn a newly configured Agent into a better digital employee
-- Help the Agent learn like an employee instead of behaving like a chat tool
-- Minimize boss-side setup friction
-- Use IM as a management panel for growth, feedback, and missing-data requests
+支持的文种：培训通知、工作请示、工作总结、会议讲话稿、会议纪要、汇报材料、其他内部正式材料
 
-In one sentence:
+### bclaw — Agent 员工化技能
 
-`BClaw = a skill that helps a new Agent evolve into a better digital employee.`
+帮助新 Agent 从工具进化为数字员工：
+- 定义角色如正式员工
+- 识别自身知识缺口
+- 向老板请求最小关键数据
+- 通过 IM 循环展示成长
+- 将重复成功转化为模板和 SOP
+- 稳定后才扩展权限
 
-## What It Does
-
-BClaw helps an Agent do 6 things well:
-
-1. Define its role like a real employee
-2. Identify what it is missing before pretending it knows everything
-3. Ask the boss for only the minimum critical data
-4. Show visible growth through an IM loop
-5. Turn repeated success into templates, SOPs, and then skills
-6. Expand permissions only after stability is proven
-
-## When To Invoke
-
-Use `BClaw` when:
-
-- a new OpenClaw or Agent has just been created
-- an existing Agent still feels like a tool, not an employee
-- you want an Agent to ask for missing setup data in a disciplined way
-- you want visible weekly growth instead of one-off task execution
-- you want to convert role expectations into reusable operating rules
-
-Do not use it for:
-
-- installation troubleshooting
-- dependency or environment errors
-- ordinary copywriting unrelated to Agent evolution
-- a single prompt rewrite that does not involve role design or growth loops
-
-## Core Idea
-
-BClaw is built on four operating beliefs:
-
-- The user is the boss
-- The Agent is the employee
-- The manual is written for the Agent to learn from
-- The goal is not better chatting, but better growth and cooperation
-
-## Minimum Boss Input
-
-To avoid overwhelming the boss, BClaw asks for only 4 kinds of core data first:
-
-1. `Role goal`
-2. `One strong sample`
-3. `One boundary rule`
-4. `One round of feedback`
-
-Everything else can be delayed until the Agent proves value.
-
-## IM Growth Loop
-
-BClaw treats IM as a management panel, not just a chat window.
-
-It defaults to only 3 message types:
-
-1. `Onboarding confirmation`
-2. `Gap request`
-3. `Weekly growth report`
-
-This keeps the Agent proactive without becoming noisy.
-
-## Files
-
-```text
-.trae/
-  skills/
-    bclaw/
-      SKILL.md
-      WORKFLOW.md
-      CHECKLIST.md
-```
-
-- `SKILL.md`: trigger rules, positioning, and default output structure
-- `WORKFLOW.md`: detailed operating sequence and message templates
-- `CHECKLIST.md`: quality gates for publishability and real-world usefulness
-
-## Install
-
-Copy the `bclaw` folder into your workspace skill directory:
-
-```text
-.trae/skills/bclaw/
-```
-
-If you are using this repository directly, keep the structure under:
-
-```text
-.trae/skills/bclaw/
-```
-
-## Recommended Output
-
-When BClaw is invoked, the Agent should usually produce:
-
-1. A digital employee role card
-2. The current growth gaps
-3. The minimum boss support checklist
-4. A directly sendable evolution instruction for the Agent
-5. The IM growth loop
-6. A 7-day growth plan
-
-## Design Goal
-
-BClaw is designed to help any Agent start small, prove value quickly, and grow with low management overhead.
-
-That means:
-
-- less data grabbing
-- more precise requests
-- clearer role boundaries
-- visible growth
-- safer permission expansion
-
-## Source Note
-
-This skill is abstracted and refined from a publicly readable Feishu page titled:
-
-`OpenClaw小龙虾优秀员工手册（飞书版2.0）`
-
-The current release reorganizes that thinking into a publishable multi-file skill package.
+文件结构：
+- `SKILL.md`：触发规则、定位和默认输出结构
+- `WORKFLOW.md`：详细操作序列和消息模板
+- `CHECKLIST.md`：发布质量和实用性的质量门

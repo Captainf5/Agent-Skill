@@ -1,3 +1,5 @@
+> **课程设计新版入口：** [博AI增效课程 Skill 套件](https://github.com/Captainf5/boai-course)。理念、问卷、课纲、案例、教学数据、PPT与录音复盘集中维护。本仓库继续维护其他Agent任务技能。
+
 # Agent-Skill
 
 适合各 Agent 的各类 Skills，集中管理。

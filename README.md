@@ -1,64 +1,59 @@
-> **课程设计新版入口：** [博AI增效课程 Skill 套件](https://github.com/Captainf5/boai-course)。理念、问卷、课纲、案例、教学数据、PPT与录音复盘集中维护。本仓库继续维护其他Agent任务技能。
+# Agent-Skill｜让你的Agent变得更强
 
-# Agent-Skill
+**面向垂直OPC场景与10人以内AI Native团队的Agent增强Skill合集。**
 
-适合各 Agent 的各类 Skills，集中管理。
+少搭系统，先让Agent找对问题、理解需求、推进商机、交出可验收成果。这里把通用元能力与业务能力组合使用，服务内容、成交和交付。
 
-## Skills 目录
+## 按当前问题选择
 
-| Skill | 说明 | 安装路径 |
-|-------|------|----------|
-| [crb-doc-review](./crb-doc-review/) | 华润饮料公文90分自检助手 — 通知/请示/总结/讲话稿/会议纪要等内部正式材料审稿评分、诊断和优化改写 | `~/.workbuddy/skills/crb-doc-review/` |
-| [bclaw](./bclaw/) | Agent 员工化技能 — 把新 Agent 培养成数字员工 | `~/.workbuddy/skills/bclaw/` |
+| 你的问题 | Skill | 交付什么 |
+|---|---|---|
+| 我不知道哪些工作值得交给AI | [场景挖掘 · bobo-mining](bobo-mining/SKILL.md) | 任务盘点、场景优先级、一个TOP1场景的轻量PRD |
+| Agent总是理解偏、做不稳 | [提示词大师 · bobo-prompt-master](bobo-prompt-master/SKILL.md) | 可复制提示词、资料与权限建议、质检标准 |
+| 这单值不值得跟，下一步怎么推进 | [销售参谋 · bobo-sales](bobo-sales/SKILL.md) | 商机诊断、决策链、拜访问题与下一步动作 |
+| 新Agent缺少角色和工作流程 | [Agent员工化 · bclaw](bclaw/SKILL.md) | 角色定义、流程、反馈与逐步授权的工作方式 |
+| 正式材料交付前缺少质量把关 | [公文自检 · crb-doc-review](crb-doc-review/SKILL.md) | 问题诊断、改写建议与复核清单（现有华润饮料场景版本） |
 
-## 安装方式（WorkBuddy 用户）
+**通用元能力**：场景挖掘、提示词优化、Agent员工化。**业务能力**：ToB销售参谋、公文质检。销售参谋适合复杂的企业客户商机，不把它当作所有销售场景的通用答案。
 
-### 方式一：一键安装（推荐）
+## 一个小团队怎么用
 
-**macOS / Linux：**
-```bash
-curl -sL https://raw.githubusercontent.com/Captainf5/Agent-Skill/main/crb-doc-review/install.sh | bash
-```
+1. **选值得做的事**：用场景挖掘找到高频、可复用、能复核的任务，先确定一个最值得试的场景。
+2. **把任务交代清楚**：用提示词大师明确目标、资料、输出与权限，得到可重复使用的指令。
+3. **让业务前进**：销售参谋帮助研判商机；公文自检帮助检查交付；需要持续协作时，再用员工化Skill明确Agent职责。
 
-**Windows（CMD / PowerShell）：**
-```cmd
-powershell -Command "Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/Captainf5/Agent-Skill/main/crb-doc-review/install.bat' -OutFile 'install.bat'; cmd /c install.bat"
-```
-或直接下载 `install.bat` 到本地运行。
+不是每次都调用全部Skill。按任务选用，完成一次真实工作后再考虑扩大自动化范围。
 
-### 方式二：手动安装
+## 直接这样开始
 
-1. 下载对应 Skill 目录下的 `SKILL.md`
-2. 放到自己机器的 `~/.workbuddy/skills/<skill-name>/SKILL.md`
-3. 重启 WorkBuddy 即可生效
+- **场景挖掘**：“我是小团队负责人，帮我盘点内容、成交、交付中最值得AI化的任务，先选一个场景。”
+- **提示词大师**：“这条提示词总是输出空话，帮我找缺口并改成可执行版本。”
+- **销售参谋**：“客户说预算不足，这是对话记录。帮我判断卡点，给下一次沟通的动作。”
 
----
+## 安装
 
-## Skill 详情
+把下列要求交给支持Skill的Agent，替换需要的目录名：
 
-### crb-doc-review — 华润饮料公文90分自检助手
+> 请安装 https://github.com/Captainf5/Agent-Skill 中的 bobo-prompt-master，保留该目录下的全部参考文件，检查依赖，按当前宿主的安装方式接入；已有版本先对比，不直接覆盖。
 
-粘贴一篇初稿，自动触发6步审稿流程：
-1. 文种与场景判断
-2. 5维度评分（总分100）
-3. 主要问题诊断表
-4. 90分优化稿
-5. 人工复核清单
-6. 提交达标判断
+也可下载仓库，将需要的完整Skill目录放入宿主技能目录。每项可单独使用，不要只复制SKILL.md。销售评分脚本需要Python；登录、外部系统权限与模型能力由使用者的宿主提供。
 
-支持的文种：培训通知、工作请示、工作总结、会议讲话稿、会议纪要、汇报材料、其他内部正式材料
+## 当前发行
 
-### bclaw — Agent 员工化技能
+| 新增能力 | 来源版本 | 本轮状态 |
+|---|---|---|
+| bobo-prompt-master | 3.0.0 | 已公开提示词工作流与42条参考套路；本机桌宠扩展不随包发布 |
+| bobo-mining | 源包未声明版本号 | 已公开访谈、PRD、归档与一键版参考 |
+| bobo-sales | 2.0.0 | 已公开研判流程、参考框架、模板与评分脚本 |
 
-帮助新 Agent 从工具进化为数字员工：
-- 定义角色如正式员工
-- 识别自身知识缺口
-- 向老板请求最小关键数据
-- 通过 IM 循环展示成长
-- 将重复成功转化为模板和 SOP
-- 稳定后才扩展权限
+原有 bclaw、crb-doc-review 保留。发行记录与验证范围见 [PUBLICATION.md](PUBLICATION.md)。公开源码不代表所有宿主与真实业务场景都已验证。
 
-文件结构：
-- `SKILL.md`：触发规则、定位和默认输出结构
-- `WORKFLOW.md`：详细操作序列和消息模板
-- `CHECKLIST.md`：发布质量和实用性的质量门
+## 与其他合集的关系
+
+- [博AI课程设计合集](https://github.com/Captainf5/boai-course)：面向课程研发，调研、课纲、案例、PPT与复盘独立维护。
+- [BOBO数据分析](https://github.com/Captainf5/bobo-data-analysis)：个人使用与学员带练的独立数据分析Skill。
+- 本仓库：帮助个人与小团队增强Agent的通用能力和业务判断。
+
+方法论来源与致谢保留在各Skill的参考资料中，不把引用的第三方方法标成原创，也不另行替第三方授予使用许可。
+
+[冯博的自我介绍与项目](https://github.com/Captainf5) · [博派官网](https://www.bopai.online/) · [培训与合作](mailto:fengbo.football@foxmail.com)
